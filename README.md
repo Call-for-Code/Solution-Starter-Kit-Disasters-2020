@@ -1,4 +1,4 @@
-# Water sustainability in the context of climate change 
+# Disaster resiliency in the context of climate change 
 
 This solution starter was created by at the United Nations Human Rights Office in Geneva, Switzerland on February 27-28, 2020. It features contributions by technologists from XXX, YYY, IBM, and Red Hat. 
 
