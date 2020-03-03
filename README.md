@@ -1,11 +1,13 @@
 # Disaster resiliency in the context of climate change 
 
-This solution starter was created by at the United Nations Human Rights Office in Geneva, Switzerland on February 27-28, 2020. It features contributions by technologists from XXX, YYY, IBM, and Red Hat. 
+This solution starter was created by at the United Nations Human Rights Office in Geneva, Switzerland on February 27-28, 2020. It features contributions by technologists from Unity, Johnson & Johnson, and Red Hat. 
 
 ## Authors
 
-* Jane Jones - RBS
-* Janet Jones - IBM
+* Scott Sewell - Unity
+* Jochen Bertels - JNJ 
+* DeveloperSteve Coochin - IBM 
+* Joshua Zheng - IBM
 
 ## Contents
 
@@ -24,11 +26,13 @@ This solution starter was created by at the United Nations Human Rights Office i
 ## Overview
 
 ### What's the problem?
-The global climate crisis is inextricably linked to water. Higher temperatures and more extreme weather events are projected to affect the availability and distribution of rainfall, snowmelt, river flows, and groundwater, and further deteriorate water quality. Low-income communities, already the most vulnerable to any threats to water supply, are likely to be the worst affected.
 
-Read the [UN policy on climate change and water](https://www.unwater.org/publications/un-water-policy-brief-on-climate-change-and-water/) and understand how you can make a difference.
+Natural disasters kill an estimated 90,000 people and affect close to 160 million people worldwide every year, according to the World Health Organization. Severe weather events in particular have been increasing in frequency and intensity over the past decade and scientists believe climate change is a significant factor.
+
+Read the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/implementing-sendai-framework/what-sf) to see how we make our communities safer and more resilient to disasters.
 
 ### How can technology help?
+
 Whether it's third-party open source projects or IBM Cloud services, technologies like data analytics, Internet of Things, artificial intelligence, and blockchain can help address global environmental challenges such as water quantity and quality. Using water more efficiently will reduce greenhouse gases from treatment systems. 
 
 ## Video
