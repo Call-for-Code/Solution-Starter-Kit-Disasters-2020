@@ -57,13 +57,15 @@ By combining cloud-native infrastructure with event-driven data processing and i
 
 ## Diagrams
 
-![Challenge 1 Architecture](/images/Challenge_1_Architecture.png?raw=true "Challenge 1 Architecture")
+![Challenge 3 Architecture](/images/Challenge_3_Architecture.png)
 
-This solution starter idea combines machine learning models with real-time information to get users the information they need to take action quickly.
+This solution starter idea combines machine learning and location services with real-time information to get users the information they need to take action quickly.
 
-1. By managing a collection of models about how better to restore infrastructure, the system could store historical data, use that to predict trends, and therefore provide recommendations in the form of an assessment.
-1. These models could then be referenced by various applications to collect information about the current situation and provide end users with the assessments.
-1. By rating the success of the recommendation, users can provide information that will help others in turn during future situations to build back better.
+1. The user launches the mobile app and can access information across multiple services.
+1. The use can ask questions to Watson Assistant and get answers to flood planning and recovery related questions.
+1. The user receives real-time weather updates from The Weather Company.
+1. The user can obtain geolocation data for safety points and plot evacuation routes using HERE Location Services.
+1. The user can access recommendations on flood preparation checklists and best practices with Watson Machine Learning.
 
 ## Documents
 
