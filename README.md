@@ -63,9 +63,9 @@ This solution starter idea combines machine learning and location services with 
 
 1. The user launches the mobile app and can access information across multiple services.
 1. The use can ask questions to Watson Assistant and get answers to flood planning and recovery related questions.
+1. The user can access recommendations on flood preparation checklists and best practices with Watson Machine Learning.
 1. The user receives real-time weather updates from The Weather Company.
 1. The user can obtain geolocation data for safety points and plot evacuation routes using HERE Location Services.
-1. The user can access recommendations on flood preparation checklists and best practices with Watson Machine Learning.
 
 ## Documents
 
