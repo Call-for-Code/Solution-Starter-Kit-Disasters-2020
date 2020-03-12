@@ -95,47 +95,75 @@ This solution starter idea combines machine learning and location services with 
 - [Build and deploy a disaster donations website with end-to-end encryption](https://developer.ibm.com/technologies/systems/patterns/systems-create-a-secure-disaster-donations-website)
 - [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
+- [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
 
 ## Getting started
 
 ### Prerequisite
 
-- An [IBM Cloud](https://cloud.ibm.com/login) account
+- Register for an [IBM Cloud](https://cloud.ibm.com/login) account
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview)
-- A [HERE](https://developer.here.com/sign-up) account
-- [Node.js](https://nodejs.org/en/) installed
-- [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) for your operating system
+- Register for a [HERE](https://developer.here.com/sign-up) account
+- Install [Node.js](https://nodejs.org/en/)
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html)
 
 ### Steps
 
-1. [Create an instance of Watson Assistance](#)
-1. [Generate an API Key from the HERE Developer Portal](#)
-1. [Deploy to IBM Cloud](#)
-1. [Run the mobile application](#)
+1. [Set up an instance of Watson Assistant](#1.-set-up-an-instance-of-watson-assistant)
+1. [Generate an API Key from the HERE Developer Portal](#2.-generate-an-api-key-from-the-here-developer-portal)
+1. [Deploy to IBM Cloud](#3.-deploy-to-ibm-cloud)
+1. [Run the mobile application](#4.-run-the-mobile-application)
 
-### 1. Create an instance of Watson Assistance
 
-Log into the IBM Cloud and provision a Watson Assistance instance.
+### 1. Set up an instance of Watson Assistant
 
-...
+Log into the IBM Cloud and provision a Watson Assistant instance.
+
+1. Create a **Watson Assistant** instance from the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant).
+1. [Import into Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) the dialog skill (i.e., `flood.json`)
+1. Open the assistant settings and click **API Details** and take note of the service credentials and the assistant ID
+
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
 The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
+
 ### 3. Deploy to IBM Cloud
 
-To configure and deploy the server application to the IBM Cloud ...
+To configure and deploy the server application to the IBM Cloud:
+
+1. Edit the `ibm-credentials.env` and update the API Key and URL for the Watson Assistant
+1. From a terminal run  
+    1. Change to the `SolutionStarterKitDisastersServer` directory
+    1. Log in to your IBM Cloud account: `ibmcloud login`
+    1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
+    1. Push the app to IBM Cloud: `ibmcloud cf push`
+
+The server can be accessed at the URL listed in the output
+
 
 ### 4. Run the mobile application
 
-To configure and launch the mobile application ...
+To configure and launch the mobile application:
 
+1. Edit the `here-credentials.js` and update the API Key for HERE.
+1. From a terminal run
+    1. Change to the `SolutionStarterKitDisastersApp` directory
+    1. Install dependencies: `npm install @react-navigation/native`
+    1. Launch the app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
 
 
 ## Resources
 
-...
+- [IBM Cloud](https://www.ibm.com/cloud)
+- [Getting started with the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started)
+- [Watson Assistant - Documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
+- [Watson Assistant - API Overview](https://cloud.ibm.com/apidocs/assistant/assistant-v2)
+- [HERE Location Services - Documentation](https://developer.here.com/documentation)
+- [HERE Location Services - Maps API Reference](https://developer.here.com/documentation/maps/api_reference/index.html)
+- [React Native Get Started](https://reactnative.dev/docs/getting-started)
+- [React Navigation](https://reactnavigation.org/)
 
 ## License
 
