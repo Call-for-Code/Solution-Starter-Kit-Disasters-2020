@@ -81,79 +81,49 @@ This solution starter idea combines machine learning and location services with 
 
 ## Technology
 
-- [Generate insights from multiple data sources](https://developer.ibm.com/patterns/generate-insights-from-multiple-data-sources-using-watson-studio/)
-- [Transform and load big data CSV files into a database](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/)
-- [2018 Finalist PD3R](https://developer.ibm.com/blogs/call-for-code-finalist-pd3r-uses-artificial-intelligence-for-retrofitting/)
+- [Watson Assistant](https://cloud.ibm.com/docs/services/assistant?topic=assistant-getting-started): Combine machine learning, natural language understanding, and an integrated dialog editor to create conversation flows between your apps and your users.
+- [HERE Location Service](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/): Integrate interactive maps and location features into your application.
 
 ## Getting started
 
 ### Prerequisite
 
-You should have a basic understanding of the OpenWhisk programming model. If not, [try the action, trigger, and rule demo first](https://github.com/IBM/openwhisk-action-trigger-rule).
-
-Also, you'll need an IBM Cloud account and the latest [OpenWhisk command line tool (`ibmcloud fn`) installed and on your PATH](https://github.com/IBM/openwhisk-action-trigger-rule/blob/master/docs/OPENWHISK.md).
-
-As an alternative to this end-to-end example, you might also consider the more [basic "building block" version](https://github.com/IBM/openwhisk-rest-api-trigger) of this sample.
+- An [IBM Cloud](https://cloud.ibm.com/login) account
+- Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview)
+- A [HERE](https://developer.here.com/sign-up) account
+- [Node.js](https://nodejs.org/en/) installed
+- [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) for your operating system
 
 ### Steps
 
-1. [Provision MySQL](#1-provision-mysql)
-2. [Create OpenWhisk actions and mappings](#2-create-openwhisk-actions-and-mappings)
-3. [Test API endpoints](#3-test-api-endpoints)
-4. [Delete actions and mappings](#4-delete-actions-and-mappings)
-5. [Recreate deployment manually](#5-recreate-deployment-manually)
+1. [Create an instance of Watson Assistance](#)
+1. [Generate an API Key from the HERE Developer Portal](#)
+1. [Deploy to IBM Cloud](#)
+1. [Run the mobile application](#)
 
-### 1. Provision MySQL
+### 1. Create an instance of Watson Assistance
 
-Log into the IBM Cloud and provision a [ClearDB](https://console.ng.bluemix.net/catalog/services/cleardb-mysql-database/) or a [Compose for MySQL](https://console.ng.bluemix.net/catalog/services/compose-for-mysql/) database instance. ClearDB has a free tier for simple testing, while Compose has tiers for larger workloads.
+Log into the IBM Cloud and provision a Watson Assistance instance.
 
-- For [ClearDB](https://console.ng.bluemix.net/catalog/services/cleardb-mysql-database/), log into the ClearDB dashboard, and select the default database created for you. Get the user, password and host information under "Endpoint Information".
+...
 
-- For [Compose](https://console.ng.bluemix.net/catalog/services/compose-for-mysql/), get the information from the `Service Credentials` tab in the IBM Cloud console.
+### 2. Generate an API Key from the HERE Developer Portal
 
-Copy `template.local.env` to a new file named `local.env` and update the `MYSQL_HOSTNAME`, `MYSQL_USERNAME`, `MYSQL_PASSWORD` and `MYSQL_DATABASE` for your MySQL instance.
+The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
-### 2. Create OpenWhisk actions and mappings
+### 3. Deploy to IBM Cloud
 
-`deploy.sh` is a convenience script reads the environment variables from `local.env` and creates the OpenWhisk actions and API mappings on your behalf. Later you will run these commands yourself.
+To configure and deploy the server application to the IBM Cloud ...
 
-```bash
-./deploy.sh --install
-```
+### 4. Run the mobile application
 
-> **Note**: If you see any error messages, refer to the [Troubleshooting](#troubleshooting) section below. You can also explore [Alternative deployment methods](#alternative-deployment-methods).
+To configure and launch the mobile application ...
 
-### 3. Test API endpoints
 
-There are four helper scripts that simulate HTTP API clients to create, get, update and delete entities against the `/v1/cat` endpoint.
-
-```bash
-# POST /v1/cat {"name": "Tarball", "color": "Black"}
-client/cat-post.sh Tarball Black
-
-# GET /v1/cat?id=1
-client/cat-get.sh 1 # Or whatever integer ID was returned by the command above
-
-# PUT /v1/cat {"id": 1, "name": "Tarball", "color": "Gray"}
-client/cat-put.sh 1 Tarball Gray
-
-# DELETE /v1/cat?id=1
-client/cat-delete.sh 1
-```
-
-### 4. Delete actions and mappings
-
-Use `deploy.sh` again to tear down the OpenWhisk actions and mappings. You will recreate them step-by-step in the next section.
-
-```bash
-./deploy.sh --uninstall
-```
 
 ## Resources
 
-- [Words into Action guidelines: Build back better in recovery, rehabilitation and reconstruction](https://www.unisdr.org/we/inform/publications/53213)
-- [Sendai Framework Priority 4: Build Back Better](https://www.youtube.com/watch?v=mRTlS3ZfljM)
-- [Building Back Better: How to Cut Natural Disaster Losses by a Third](https://www.worldbank.org/en/news/press-release/2018/06/18/building-back-better-how-to-cut-natural-disaster-losses-by-a-third)
+...
 
 ## License
 
