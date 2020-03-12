@@ -71,6 +71,9 @@ This solution starter idea combines machine learning and location services with 
 
 - [Terminology on disaster risk reduction](https://www.unisdr.org/we/inform/terminology)
 - [Using global indicators to measure progress](https://www.unisdr.org/files/54970_techguidancefdigitalhr.pdf)
+- [Words into Action guidelines: Enhancing disaster preparedness for effective response](https://www.preventionweb.net/publications/view/53347)
+- [Health care challenges during and after a natural disaster](https://developer.ibm.com/callforcode/blogs/health-care-challenges-during-and-after-a-natural-disaster)
+- [IBM Code and Response: COVID-19](https://developer.ibm.com/podcasts/ibm_developer_podcast/015-john-walicki-code-and-response-covid-19/)
 
 ## Datasets
 
@@ -78,11 +81,20 @@ This solution starter idea combines machine learning and location services with 
 - [Land Usage from MASDAP](http://www.masdap.mw/layers/osm:osm_landusages)
 - [Malawi Disaster & Risk Profile](https://www.preventionweb.net/countries/mwi/data/)
 - [Disparities in Cellphone Ownership Pose Challenges in Africa](https://news.gallup.com/poll/189269/disparities-cellphone-ownership-pose-challenges-africa.aspx)
+- [Data.gov disaster datasets](https://catalog.data.gov/dataset?q=disaster)
+
 
 ## Technology
 
-- [Watson Assistant](https://cloud.ibm.com/docs/services/assistant?topic=assistant-getting-started): Combine machine learning, natural language understanding, and an integrated dialog editor to create conversation flows between your apps and your users.
-- [HERE Location Service](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/): Integrate interactive maps and location features into your application.
+- [Generate insights from multiple data sources](https://developer.ibm.com/patterns/generate-insights-from-multiple-data-sources-using-watson-studio/)
+- [Transform and load big data CSV files into a database](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/)
+- [2018 Finalist PD3R](https://developer.ibm.com/blogs/call-for-code-finalist-pd3r-uses-artificial-intelligence-for-retrofitting/)
+- [Create domain-specific bots using an agent bot](https://developer.ibm.com/patterns/compose-bots-using-an-agent-bot/)
+- [Automate post-disaster checks using drone imagery](https://developer.ibm.com/technologies/iot/patterns/automate-post-disaster-checks-and-foster-offline-communication)
+- [Configuring mesh networking for the IoT](https://developer.ibm.com/technologies/iot/tutorials/create-iot-mesh-network)
+- [Build and deploy a disaster donations website with end-to-end encryption](https://developer.ibm.com/technologies/systems/patterns/systems-create-a-secure-disaster-donations-website)
+- [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
+- [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
 
 ## Getting started
 
