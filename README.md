@@ -59,13 +59,15 @@ By combining IBM's Data & AI offerings with HERE Technologies' location services
 
 ## Diagrams
 
-![Challenge 1 Architecture](/images/Challenge_1_Architecture.png?raw=true "Challenge 1 Architecture")
+![Challenge 3 Architecture](/images/Challenge_3_Architecture.png)
 
-This solution starter idea combines machine learning models with real-time information to get users the information they need to take action quickly.
+This solution starter idea combines machine learning and location services with real-time information to get users the information they need to take action quickly.
 
-1. By managing a collection of models about how better to restore infrastructure, the system could store historical data, use that to predict trends, and therefore provide recommendations in the form of an assessment.
-1. These models could then be referenced by various applications to collect information about the current situation and provide end users with the assessments.
-1. By rating the success of the recommendation, users can provide information that will help others in turn during future situations to build back better.
+1. The user launches the mobile app and can access information across multiple services.
+1. The use can ask questions to Watson Assistant and get answers to flood planning and recovery related questions.
+1. The user can access recommendations on flood preparation checklists and best practices with Watson Machine Learning.
+1. The user receives real-time weather updates from The Weather Company.
+1. The user can obtain geolocation data for safety points and plot evacuation routes using HERE Location Services.
 
 ## Documents
 
@@ -95,76 +97,77 @@ This solution starter idea combines machine learning models with real-time infor
 - [Build and deploy a disaster donations website with end-to-end encryption](https://developer.ibm.com/technologies/systems/patterns/systems-create-a-secure-disaster-donations-website)
 - [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
+- [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
 
 ## Getting started
 
 ### Prerequisite
 
-You should have a basic understanding of the OpenWhisk programming model. If not, [try the action, trigger, and rule demo first](https://github.com/IBM/openwhisk-action-trigger-rule).
-
-Also, you'll need an IBM Cloud account and the latest [OpenWhisk command line tool (`ibmcloud fn`) installed and on your PATH](https://github.com/IBM/openwhisk-action-trigger-rule/blob/master/docs/OPENWHISK.md).
-
-As an alternative to this end-to-end example, you might also consider the more [basic "building block" version](https://github.com/IBM/openwhisk-rest-api-trigger) of this sample.
+- Register for an [IBM Cloud](https://cloud.ibm.com/login) account
+- Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview)
+- Register for a [HERE](https://developer.here.com/sign-up) account
+- Install [Node.js](https://nodejs.org/en/)
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html)
+- Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020)
 
 ### Steps
 
-1. [Provision MySQL](#1-provision-mysql)
-2. [Create OpenWhisk actions and mappings](#2-create-openwhisk-actions-and-mappings)
-3. [Test API endpoints](#3-test-api-endpoints)
-4. [Delete actions and mappings](#4-delete-actions-and-mappings)
-5. [Recreate deployment manually](#5-recreate-deployment-manually)
+1. [Set up an instance of Watson Assistant](#1.-set-up-an-instance-of-watson-assistant)
+1. [Generate an API Key from the HERE Developer Portal](#2.-generate-an-api-key-from-the-here-developer-portal)
+1. [Run the server](#3.-run-the-server)
+1. [Run the mobile application](#4.-run-the-mobile-application)
 
-### 1. Provision MySQL
+### 1. Set up an instance of Watson Assistant
 
-Log into the IBM Cloud and provision a [ClearDB](https://console.ng.bluemix.net/catalog/services/cleardb-mysql-database/) or a [Compose for MySQL](https://console.ng.bluemix.net/catalog/services/compose-for-mysql/) database instance. ClearDB has a free tier for simple testing, while Compose has tiers for larger workloads.
+Log into the IBM Cloud and provision a Watson Assistant instance.
 
-- For [ClearDB](https://console.ng.bluemix.net/catalog/services/cleardb-mysql-database/), log into the ClearDB dashboard, and select the default database created for you. Get the user, password and host information under "Endpoint Information".
+1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
+1. Launch the service and [create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add)
+1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json)
+1. Go into the assistant's settings and select **API Details**
+1. Take note of the **Assistant ID** and **Api Key**
 
-- For [Compose](https://console.ng.bluemix.net/catalog/services/compose-for-mysql/), get the information from the `Service Credentials` tab in the IBM Cloud console.
+### 2. Generate an API Key from the HERE Developer Portal
 
-Copy `template.local.env` to a new file named `local.env` and update the `MYSQL_HOSTNAME`, `MYSQL_USERNAME`, `MYSQL_PASSWORD` and `MYSQL_DATABASE` for your MySQL instance.
+The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
-### 2. Create OpenWhisk actions and mappings
+### 3. Run the server
 
-`deploy.sh` is a convenience script reads the environment variables from `local.env` and creates the OpenWhisk actions and API mappings on your behalf. Later you will run these commands yourself.
+To setup and launch the server application:
 
-```bash
-./deploy.sh --install
-```
+1. Go into the `starter-kit/server-app` directory of the cloned repo
+1. Copy the `.env.example` file and create a file called `.env`
+1. Edit the `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID`, and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
+1. Edit the value of **name** in `manifest.yml` to your desired application name (e.g., _my-app-name_)
+1. From a terminal run  
+    1. Change to the `starter-kit/server-app` directory of the cloned repo
+    1. Install the dependencies: `npm install`
+1. Launch the server application locally or deploy to IBM Cloud:
+    - To run locally:
+        1. Start the application: `npm start`
+        1. The server can be accessed at http://localhost:3000
+    - To deploy to IBM Cloud:
+        1. Log in to your IBM Cloud account: `ibmcloud login`
+        1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
+        1. Push the app to IBM Cloud: `ibmcloud app push`
+        1. The server can be accessed at your app name URL: https://my-app-name
 
-> **Note**: If you see any error messages, refer to the [Troubleshooting](#troubleshooting) section below. You can also explore [Alternative deployment methods](#alternative-deployment-methods).
+### 4. Run the mobile application
 
-### 3. Test API endpoints
+To configure and launch the mobile application:
 
-There are four helper scripts that simulate HTTP API clients to create, get, update and delete entities against the `/v1/cat` endpoint.
-
-```bash
-# POST /v1/cat {"name": "Tarball", "color": "Black"}
-client/cat-post.sh Tarball Black
-
-# GET /v1/cat?id=1
-client/cat-get.sh 1 # Or whatever integer ID was returned by the command above
-
-# PUT /v1/cat {"id": 1, "name": "Tarball", "color": "Gray"}
-client/cat-put.sh 1 Tarball Gray
-
-# DELETE /v1/cat?id=1
-client/cat-delete.sh 1
-```
-
-### 4. Delete actions and mappings
-
-Use `deploy.sh` again to tear down the OpenWhisk actions and mappings. You will recreate them step-by-step in the next section.
-
-```bash
-./deploy.sh --uninstall
-```
+1. Edit the `here-credentials.js` and update the API Key for HERE.
+1. From a terminal run
+    1. Change to the `SolutionStarterKitDisastersApp` directory
+    1. Install dependencies: `npm install @react-navigation/native`
+    1. Launch the app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
 
 ## Resources
 
-- [Words into Action guidelines: Build back better in recovery, rehabilitation and reconstruction](https://www.unisdr.org/we/inform/publications/53213)
-- [Sendai Framework Priority 4: Build Back Better](https://www.youtube.com/watch?v=mRTlS3ZfljM)
-- [Building Back Better: How to Cut Natural Disaster Losses by a Third](https://www.worldbank.org/en/news/press-release/2018/06/18/building-back-better-how-to-cut-natural-disaster-losses-by-a-third)
+- [IBM Cloud](https://www.ibm.com/cloud)
+- [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
+- [HERE Location Services](https://developer.here.com/documentation)
+- [React Navigation](https://reactnavigation.org/)
 
 ## License
 
