@@ -106,14 +106,14 @@ This solution starter idea combines machine learning and location services with 
 - Register for a [HERE](https://developer.here.com/sign-up) account
 - Install [Node.js](https://nodejs.org/en/)
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html)
+- Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020)
 
 ### Steps
 
 1. [Set up an instance of Watson Assistant](#1.-set-up-an-instance-of-watson-assistant)
 1. [Generate an API Key from the HERE Developer Portal](#2.-generate-an-api-key-from-the-here-developer-portal)
-1. [Deploy to IBM Cloud](#3.-deploy-to-ibm-cloud)
+1. [Run the server](#3.-run-the-server)
 1. [Run the mobile application](#4.-run-the-mobile-application)
-
 
 ### 1. Set up an instance of Watson Assistant
 
@@ -123,25 +123,28 @@ Log into the IBM Cloud and provision a Watson Assistant instance.
 1. [Import into Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) the dialog skill (i.e., `flood.json`)
 1. Open the assistant settings and click **API Details** and take note of the service credentials and the assistant ID
 
-
 ### 2. Generate an API Key from the HERE Developer Portal
 
 The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
+### 3. Run the server
 
-### 3. Deploy to IBM Cloud
-
-To configure and deploy the server application to the IBM Cloud:
-
-1. Edit the `ibm-credentials.env` and update the API Key and URL for the Watson Assistant
+1. Go into the `starter-kit/server-app` directory of the cloned repo
+1. Copy the `.env.example` file and create a file called `.env`
+1. Edit the `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID`, and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
+1. Edit the value of **name** in `manifest.yml` to your desired application name (e.g., _my-app-name_)
 1. From a terminal run  
-    1. Change to the `SolutionStarterKitDisastersServer` directory
-    1. Log in to your IBM Cloud account: `ibmcloud login`
-    1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
-    1. Push the app to IBM Cloud: `ibmcloud cf push`
-
-The server can be accessed at the URL listed in the output
-
+    1. Change to the `starter-kit/server-app` directory of the cloned repo
+    1. Install the dependencies: `npm install`
+1. Launch the server application locally or deploy to IBM Cloud:
+    - To run locally:
+        1. Start the application: `npm start`
+        1. The server can be accessed at http://localhost:3000
+    - To deploy to IBM Cloud:
+        1. Log in to your IBM Cloud account: `ibmcloud login`
+        1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
+        1. Push the app to IBM Cloud: `ibmcloud app push`
+        1. The server can be accessed at your app name URL: https://my-app-name
 
 ### 4. Run the mobile application
 
@@ -153,16 +156,11 @@ To configure and launch the mobile application:
     1. Install dependencies: `npm install @react-navigation/native`
     1. Launch the app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
 
-
 ## Resources
 
 - [IBM Cloud](https://www.ibm.com/cloud)
-- [Getting started with the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started)
-- [Watson Assistant - Documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
-- [Watson Assistant - API Overview](https://cloud.ibm.com/apidocs/assistant/assistant-v2)
-- [HERE Location Services - Documentation](https://developer.here.com/documentation)
-- [HERE Location Services - Maps API Reference](https://developer.here.com/documentation/maps/api_reference/index.html)
-- [React Native Get Started](https://reactnative.dev/docs/getting-started)
+- [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
+- [HERE Location Services](https://developer.here.com/documentation)
 - [React Navigation](https://reactnavigation.org/)
 
 ## License
