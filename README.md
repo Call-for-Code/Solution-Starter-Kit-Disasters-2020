@@ -119,15 +119,19 @@ This solution starter idea combines machine learning and location services with 
 
 Log into the IBM Cloud and provision a Watson Assistant instance.
 
-1. Create a **Watson Assistant** instance from the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant).
-1. [Import into Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) the dialog skill (i.e., `flood.json`)
-1. Open the assistant settings and click **API Details** and take note of the service credentials and the assistant ID
+1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
+1. Launch the service and [create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add)
+1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json)
+1. Go into the assistant's settings and select **API Details**
+1. Take note of the **Assistant ID** and **Api Key**
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
 The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 3. Run the server
+
+To setup and launch the server application:
 
 1. Go into the `starter-kit/server-app` directory of the cloned repo
 1. Copy the `.env.example` file and create a file called `.env`
