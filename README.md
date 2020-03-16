@@ -178,7 +178,7 @@ To configure and launch the mobile application:
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
 - [HERE Location Services](https://developer.here.com/documentation)
-- [React Navigation](https://reactnavigation.org/)
+- [React Native](https://reactnative.dev/)
 
 ## License
 
