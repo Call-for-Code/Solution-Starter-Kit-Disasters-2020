@@ -71,7 +71,7 @@ const Message = (props) => {
   const style = props.fromInput ? styles.myText : styles.waText;
 
   return (
-    <View key={props.id} style={styles.messageContainer}>
+    <View style={styles.messageContainer}>
       <Text style={style}>{props.text}</Text>
     </View>
   );
@@ -154,7 +154,6 @@ const Chat = function ({ navigation }) {
     const result = messages.map((r, i) => {
       return {
         text: r.text,
-        id: `${date}-${i}`,
         fromInput: fromInput
       };
     });
@@ -181,9 +180,10 @@ const Chat = function ({ navigation }) {
           android: 0
         })} >
         <ScrollView contentContainerStyle={styles.scrollContainer}>
-          {messages.map(message => (
-            <Message {...message} />
-          ))}
+          {messages.map((message, i) => {
+            message.key = `${(new Date()).getTime()}-${i}`;
+            return <Message {...message} />
+          })}
         </ScrollView>
         <View style={styles.inputContainer}>
           <TextInput
