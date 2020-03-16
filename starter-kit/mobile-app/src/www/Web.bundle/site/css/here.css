@@ -97,17 +97,19 @@ body {
 
 #buttonsWrapper {
   text-align: center;
+  margin: 10px 5px 25px 5px;
+  display: flex;
+  justify-content: space-between;
 }
-#buttonsWrapper > svg {
+#buttonsWrapper svg {
   max-width: 30%;
+  background-color: #1062FE;
 }
 
 
 
 #routePanel {
-  border-top: 1px solid #1062FE;
-  padding: 10px 0 0 0;
-  margin-top: 10px;
+  margin-top: 25px 5px 5px 5px;
 }
 
 #routePanel ul {
@@ -118,8 +120,10 @@ body {
 
 #routePanel > ul > li {
   display: block;
-  padding: 0.75em;
+  margin: 10px 0;
+  padding-bottom: 5px;
   border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
 }
 
 
@@ -130,13 +134,13 @@ body {
 #routePanel ol.directions {
   overflow: auto;
   max-height: 0px;
-  background: #fff;
+  background: #f4f4f4;
   padding: 0 5px 0 20px;
-  color: #000;
+  color: #000000;
   list-style-type: decimal;
   list-style-position: outside;
   font-size: 0.8rem;
-  margin: 0.5em 0 0;
+  margin: 0;
   transition: max-height 0.3s ease-out;
 }
 
@@ -147,15 +151,18 @@ body {
 
 #routePanel > ul li.selected,
 #routePanel > ul li.selected:hover {
-  color: white;
-  background: rgba(0, 85, 170, 0.75);
+  color: #FFFFFF;
+  background-color: #1062FE;
 }
 
 #routePanel > ul li.selected ol.directions {
   max-height: 400px;
 }
 
-#routePanel > ul > li:hover {
-  background: rgba(0, 85, 170, 0.25);
-  cursor: pointer;
+#routePanel > ul > li > span {
+  display: inline-block;
+  padding: 5px;
+}
+#routePanel > ul > li:not(.selected) > span {
+  font-weight: bold;
 }

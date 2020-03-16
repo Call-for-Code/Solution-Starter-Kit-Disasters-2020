@@ -145,7 +145,7 @@ const routePanel = function (routes, onRouteSelected) {
   const routeList = document.querySelector('#routePanel ul');
   routeList.innerHTML = '';
 
-  const renderRouteTitle = (routeSummary, i) => `<strong>Route ${i + 1}</strong> (${formatDistance(routeSummary.distance)} in ${formatDuration(routeSummary.travelTime)})`;
+  const renderRouteTitle = (routeSummary, i) => `<span>Route ${i + 1}</span> (${formatDistance(routeSummary.distance)} in ${formatDuration(routeSummary.travelTime)})`;
 
   const renderManeuvers = (maneuvers) => {
     const mLi = maneuvers.map(m => `<li>${m.instruction}</li>`).join('');
