@@ -103,7 +103,7 @@ This solution starter idea combines machine learning and location services with 
 
 - Register for an [IBM Cloud](https://cloud.ibm.com/login) account
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview)
-- Register for a [HERE](https://developer.here.com/sign-up) account
+- Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account
 - Install [Node.js](https://nodejs.org/en/)
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020)
@@ -127,7 +127,7 @@ Log into the IBM Cloud and provision a Watson Assistant instance.
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
-The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 3. Run the server
 
@@ -140,25 +140,30 @@ To setup and launch the server application:
 1. From a terminal run  
     1. Change to the `starter-kit/server-app` directory of the cloned repo
     1. Install the dependencies: `npm install`
-1. Launch the server application locally or deploy to IBM Cloud:
-    - To run locally:
-        1. Start the application: `npm start`
-        1. The server can be accessed at http://localhost:3000
-    - To deploy to IBM Cloud:
-        1. Log in to your IBM Cloud account: `ibmcloud login`
-        1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
-        1. Push the app to IBM Cloud: `ibmcloud app push`
-        1. The server can be accessed at your app name URL: https://my-app-name
+    1. Launch the server application locally or deploy to IBM Cloud:
+        - To run locally:
+            1. Start the application: `npm start`
+            1. The server can be accessed at http://localhost:3000
+        - To deploy to IBM Cloud:
+            1. Log in to your IBM Cloud account: `ibmcloud login`
+            1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
+            1. Push the app to IBM Cloud: `ibmcloud app push`
+            1. The server can be accessed at your app name URL: https://my-app-name
 
 ### 4. Run the mobile application
 
 To configure and launch the mobile application:
 
-1. Edit the `here-credentials.js` and update the API Key for HERE.
+1. Go into the `starter-kit/mobile-app` directory of the cloned repo
+1. Copy the `.env.example` file and create a file called `.env`
+1. Edit the `.env` file
+    - Update the `STARTER_KIT_SERVER_URL`, with the URL to the server app launched in the previous step
+    - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal
 1. From a terminal run
-    1. Change to the `SolutionStarterKitDisastersApp` directory
-    1. Install dependencies: `npm install @react-navigation/native`
-    1. Launch the app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
+    1. Change to the `starter-kit/mobile-app` directory
+    1. Install dependencies: `npm install`
+    1. Launch the mobile app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
+
 
 ## Resources
 
