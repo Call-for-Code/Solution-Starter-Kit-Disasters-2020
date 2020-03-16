@@ -8,6 +8,7 @@ let router = null;
 let routeLineGroup = null;
 let selectedRoute = null;
 let currentInfoBubble = null;
+let geocoder = null;
 
 const markerRed = `
 <svg width="22px" height="31px" viewBox="0 0 22 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -268,7 +269,7 @@ const searchPlaces = (query) => {
   });
 };
 
-const searchFor = (query) => {
+const searchFor = (query, reset, cb) => {
   if (currentInfoBubble) {
     ui.removeBubble(currentInfoBubble);
     currentInfoBubble.dispose();
@@ -281,6 +282,9 @@ const searchFor = (query) => {
   if (searchGroup) {
     searchGroup.removeAll();
     searchGroup = null;
+  }
+  if (reset) {
+    document.getElementById('searchInput').value = '';
   }
 
   const eventListener = (evt, coordinates) => {
@@ -307,6 +311,10 @@ const searchFor = (query) => {
           opts
         ));
       });
+
+      if (cb) {
+        cb();
+      }
 
       map.addObject(searchGroup);
       zoomAndCenterAround(searchGroup);
@@ -337,6 +345,28 @@ const updatePosition = (position) => {
 const onPostMessage = (data) => {
   if (data.coords) {
     updatePosition(data.coords);
+  } else {
+    if (!geocoder) {
+      geocoder = platform.getGeocodingService();
+    }
+
+    geocoder.geocode({
+      searchText: data
+    },
+    (result) => {
+      togglePanel();
+
+      const locations = result.Response.View[0].Result;
+      if (locations.length) {
+        updatePosition({
+          lat: locations[0].Location.DisplayPosition.Latitude,
+          lng: locations[0].Location.DisplayPosition.Longitude
+        });
+      }
+    }, 
+    (e) => {
+      alert(e);
+    })
   }
 };
 

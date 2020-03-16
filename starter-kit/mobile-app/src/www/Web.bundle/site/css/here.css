@@ -74,7 +74,7 @@ body {
 
 
 
-#sidebarContainer {
+#sidebarPanel {
   background-color: #fff;
   color: var(--text-primary);
   display: block;
@@ -97,13 +97,21 @@ body {
   transition: transform 0.11s cubic-bezier(0.2, 0, 0.38, 0.9), -webkit-transform 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
   width: 50vw;
 }
-#sidebarContainer.sidebarExpanded {
+#sidebarPanel.sidebarExpanded {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.25);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
+
+
+#buttonsWrapper {
+  border-bottom: 1px solid #1062FE;
+}
+#buttonsWrapper > svg {
+  max-width: 30%;
+}
 
 
 
