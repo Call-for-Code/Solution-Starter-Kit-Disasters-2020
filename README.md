@@ -47,13 +47,15 @@ In order to leverage the benefits of such a system it must be designed to allow 
 
 ## How it works
 
-The goal of this solution is to provide a better feedback loop that empowers local municipalities, small business owners, and members of the community, especially the most vulnerable. The team approached this problem by looking how a solution could benefit three potential end users who need access to information about the current situation, resources available to them, and how to better prepare next time:
+The goal of the application to provide a end to end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
 
-1. A disaster victim, who seeks information on how to improve her community by best matching her skills to volunteer opportunities.
-1. A small business owner who needs to open her shop as soon as possible to restart cash flow.
-1. A local elected government official, who needs to generate damage assessments and rebuilding recommendations quickly.
+Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for diaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authories to communicate with the user to better enforce disaster preparedness.
 
-By combining cloud-native infrastructure with event-driven data processing and intelligent modeling, this solution could help predict when and where a disaster may strike next and extrapolate the impact. Furthermore, it could allow stakeholders to derive the most promising course of action with the greatest improvement to plans and processes possible.
+In the event of a flood, the app will switch into emergency mode. This mode can be activated by either the user or the local authorities. While in this mode, the app displays a simple evacuation route to the nearest shelter that still has capacity.
+
+After the flood, the app will provide post-flood best practices to help victims rebuild their homes.  The app will also enable a community marketplace, providing a platform for residents to trade resources and help push the economy to recover.
+
+By combining IBM's Data & AI offerings with HERE Technologies' location services, a developer can quickly get started building such a solution. The starter kit offers a React Native template that has integration with Watson Assistant and HERE Technolgies' location services prebuilt, helping developers jumpstart the development process.
 
 ## Diagrams
 
