@@ -11,72 +11,61 @@ body {
   width: 100vw;
 }
 
-#navigationContainer {
+#searchContainer {
   height: 40px;
-  left: 0px;
-  padding: 15px;
+  left: 20px;
   position: absolute;
-  top: 0px;
-  width: calc(100vw - 30px);
+  top: 15px;
+  width: calc(100vw - 100px);
 }
 #searchInput {
-  border: 1px solid #000;
+  border: 1px solid #eee;
   height: 100%;
   font-size: 18px;
-  padding: 0 10px;
+  padding: 0 50px 0 10px;
   vertical-align: middle;
-  width: calc(100% - 120px);
+  width: calc(100% - 65px);
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 }
 #searchButton {
-  background-color: #eee;
-  border: 1px solid #000;
-  font-size: 33px;
-  left: -54px;
+  background-color: transparent;
   margin: 0;
-  padding: 0;
-  position: relative;
-  vertical-align: middle;
-  width: 50px;
-}
-#searchButton > span {
-  display: inline-block;
-  -moz-transform: rotate(90deg) scale(1, -1);
-  -webkit-transform: rotate(90deg) scale(1, -1);
-  -o-transform: rotate(90deg) scale(1, -1);
-  -ms-transform: rotate(90deg) scale(1, -1);
-  transform: rotate(90deg) scale(1, -1);
+  padding: 0 5px;
+  width: 40px;
+  height: 30px;
+  border-left: 1px solid #cacaca;
+  border-right: 0 none;
+  border-bottom: 0 none;
+  border-top: 0 none;
+  position: absolute;
+  right: 5px;
+  top: 6px;
 }
 #sidebarButton {
   background-color: #fff;
-  border: 1px solid #000;
-  float: right;
-  font-size: 28px;
+  border: 1px solid #eee;
   margin: 0;
-  padding: 0px 9px 3px 10px;
-  position: relative;
-  top: -45px;
-  vertical-align: middle;
-  z-index: 200;
+  padding: 5px 5px 2px 5px;
+  z-index: 50;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+  position: absolute;
+  right: 20px;
+  top: 15px;
 }
-#sidebarButton.sidebarExpanded {
-  border: 0 none;
-  top: -5px;
-}
-
-#sidebarButton:not(.sidebarExpanded) .expandSidebar,
-#sidebarButton.sidebarExpanded .collapseSidebar {
-  display: initial;
-}
-#sidebarButton:not(.sidebarExpanded) .collapseSidebar,
-#sidebarButton.sidebarExpanded .expandSidebar {
-  display: none;
+#sidebarPanelButton {
+  position: absolute;
+  right: 0;
+  border: 0px none;
+  background-color: transparent;
+  top: 8px;
 }
 
 
 
 #sidebarPanel {
   background-color: #fff;
-  color: var(--text-primary);
   display: block;
   position: fixed;
   top: 0px;
@@ -87,7 +76,7 @@ body {
   will-change: transform;
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
-  padding: 55px 15px 15px 15px;
+  padding: 40px 15px 15px 15px;
   overflow-y: auto;
   z-index: 100;
   overflow-x: hidden;
@@ -107,7 +96,7 @@ body {
 
 
 #buttonsWrapper {
-  border-bottom: 1px solid #1062FE;
+  text-align: center;
 }
 #buttonsWrapper > svg {
   max-width: 30%;
@@ -116,9 +105,9 @@ body {
 
 
 #routePanel {
-  background: white;
-  /* position: absolute; */
-  z-index: 1;
+  border-top: 1px solid #1062FE;
+  padding: 10px 0 0 0;
+  margin-top: 10px;
 }
 
 #routePanel ul {
@@ -139,16 +128,16 @@ body {
 }
 
 #routePanel ol.directions {
-  display: none;
   overflow: auto;
-  max-height: 400px;
+  max-height: 0px;
   background: #fff;
-  padding: 5px 5px 5px 25px;
+  padding: 0 5px 0 20px;
   color: #000;
   list-style-type: decimal;
   list-style-position: outside;
-  font-size: 0.9rem;
-  margin: 0.75em 0 0;
+  font-size: 0.8rem;
+  margin: 0.5em 0 0;
+  transition: max-height 0.3s ease-out;
 }
 
 #routePanel ol.directions li {
@@ -163,7 +152,7 @@ body {
 }
 
 #routePanel > ul li.selected ol.directions {
-  display: block;
+  max-height: 400px;
 }
 
 #routePanel > ul > li:hover {

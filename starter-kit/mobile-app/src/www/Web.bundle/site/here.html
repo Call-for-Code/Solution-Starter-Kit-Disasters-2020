@@ -18,17 +18,24 @@
   </head>
   <body>
     <div id="mapContainer"></div>
-    <div id="navigationContainer">
-      <input id="searchInput" placeholder="Search">
-      <button id="searchButton">
-        <span>&#9740;</span>
-      </button>
-      <button id="sidebarButton" onclick="togglePanel();">
-        <span class="expandSidebar">&#9776;</span>
-        <span class="collapseSidebar">x</span>
+    <div id="searchContainer">
+      <input id="searchInput" placeholder="Search"><button id="searchButton">
+        <svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+          <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" fill="#6f737A"></path>
+        </svg>
       </button>
     </div>
+    <button id="sidebarButton" onclick="togglePanel();">
+      <svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+        <path d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z" fill="#6f737A"></path>
+      </svg>
+    </button>
     <div id="sidebarPanel">
+      <button id="sidebarPanelButton" onclick="togglePanel();">
+        <svg class="collapseSidebar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+          <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
+        </svg>
+      </button>
       <div id="buttonsWrapper">
         <svg onclick="onPostMessage(prompt('Enter your location'));"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="35%" height="35%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".72" d="M35,20c0,8-11,19-11,19S13,29,13,20c0-6,4.925-11,11-11S35,14,35,20z M24,16c-2.209,0-4,1.791-4,4s1.791,4,4,4s4-1.791,4-4 S26.209,16,24,16z"></path></svg>
         <svg onclick="searchFor('hospital', true, togglePanel);" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="35%" height="35%" viewBox="0 0 48 48" aria-hidden="true" style="will-change: transform;"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".72" d="M24,31v8 M24,12.999v13.002 M25.617,20.001c0.937-0.658,1.478-1.446,1.478-2.637c0-1.035-0.617-1.993-1.478-2.361 M22.382,29.827 c-0.937,0.658-1.478,1.446-1.478,2.637c0,1.035,0.617,1.993,1.478,2.361 M25.617,27.485c0.976-0.74,1.478-1.33,1.478-2.622 c0-3.246-6.179-4.1-6.179-7.618c0-0.999,0.608-1.865,1.442-2.242 M25.617,34.825c0.976-0.74,1.478-1.33,1.478-2.622 c0-3.246-6.179-4.1-6.179-7.618c0-0.999,0.608-1.865,1.442-2.242 M36,17h-6.848 M33.979,19.001h-5.164 M38,15h-6.286 c-1.241,0-2.619,0.453-2.619,2.576c0,1.275-0.855,2.84-2.095,3.424 M12,17h6.869 M14,19.001h5.187 M21,21 c-1.239-0.584-2.093-2.149-2.093-3.424c0-2.123-1.378-2.576-2.619-2.576H10 M24,9c-1.105,0-2,0.895-2,2s0.895,2,2,2s2-0.895,2-2 S25.105,9,24,9z"></path></svg>
@@ -45,21 +52,12 @@
         const sidebarPanel = document.getElementById('sidebarPanel');
         if (sidebarPanel.className.indexOf('sidebarExpanded') === -1) {
           sidebarPanel.classList.add('sidebarExpanded');
-          sidebarButton.classList.add('sidebarExpanded');
         } else {
           sidebarPanel.classList.remove('sidebarExpanded');
-          sidebarButton.classList.remove('sidebarExpanded');
         }
       }
 
       const init = function () {
-        // const triggers = document.querySelectorAll('[data-sidebar]');
-        // for (let i = 0; i < triggers.length; ++i) {
-        //   triggers[i].addEventListener('click', function () {
-        //     togglePanel(this);
-        //   });
-        // }
-
         const search = document.getElementById('searchButton');
         search.addEventListener('click', function () {
           const text = document.getElementById('searchInput').value.trim();
