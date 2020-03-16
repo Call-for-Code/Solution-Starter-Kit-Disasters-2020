@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/here.css" />
+
+    <title>SolutionsStarterKitDisasters2020App | HERE Map</title>
+  </head>
+  <body>
+    <div id="mapContainer"></div>
+    <div id="navigationContainer">
+      <input id="searchInput" placeholder="Search">
+      <button id="searchButton">
+        <span>&#9740;</span>
+      </button>
+      <button id="sidebarButton" data-sidebar="sidebarContainer">
+        <span class="expandSidebar">&#9776;</span>
+        <span class="collapseSidebar">x</span>
+      </button>
+    </div>
+    <div id="sidebarContainer">
+      <div id="routePanel">
+        <ul></ul>
+      </div>
+    </div>
+
+    <script>
+      const togglePanel = function (btn) {
+        const panelid = btn.getAttribute('data-sidebar');
+        if (panelid) {
+          const panel = document.getElementById(panelid);
+          if (panel) {
+            if (panel.className.indexOf('sidebarExpanded') === -1) {
+              panel.classList.add('sidebarExpanded');
+              btn.classList.add('sidebarExpanded');
+            } else {
+              panel.classList.remove('sidebarExpanded');
+              btn.classList.remove('sidebarExpanded');
+            }
+          }
+        }
+      }
+
+      const init = function () {
+        const triggers = document.querySelectorAll('[data-sidebar]');
+        for (let i = 0; i < triggers.length; ++i) {
+          triggers[i].addEventListener('click', function () {
+            togglePanel(this);
+          });
+        }
+
+        const search = document.getElementById('searchButton');
+        search.addEventListener('click', function () {
+          const text = document.getElementById('searchInput').value.trim();
+          if (text) {
+            searchFor(text);
+          }
+
+        })
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    </script>
+
+    <script src="js/here.js"></script>
+  </body>
+</html>

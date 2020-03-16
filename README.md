@@ -84,6 +84,7 @@ This solution starter idea combines machine learning and location services with 
 - [Malawi Disaster & Risk Profile](https://www.preventionweb.net/countries/mwi/data/)
 - [Disparities in Cellphone Ownership Pose Challenges in Africa](https://news.gallup.com/poll/189269/disparities-cellphone-ownership-pose-challenges-africa.aspx)
 - [Data.gov disaster datasets](https://catalog.data.gov/dataset?q=disaster)
+- [HERE Geocoding and Search](https://developer.here.com/products/geocoding-and-search)
 
 
 ## Technology
@@ -98,6 +99,8 @@ This solution starter idea combines machine learning and location services with 
 - [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
 - [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
+- [HERE Maps](https://developer.here.com/products/maps)
+- [HERE Routing](https://developer.here.com/products/routing)
 
 ## Getting started
 
@@ -164,6 +167,9 @@ To configure and launch the mobile application:
 1. From a terminal run
     1. Change to the `starter-kit/mobile-app` directory
     1. Install dependencies: `npm install`
+    1. Go into the `ios` directory: `cd ios`
+    1. Install pod dependencies: `pod install`
+    1. Return to the `mobile-app` directory: `cd ../`
     1. Launch the mobile app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
 
 
