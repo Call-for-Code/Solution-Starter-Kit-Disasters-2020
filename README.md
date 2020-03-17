@@ -49,17 +49,18 @@ In order to leverage the benefits of such a system it must be designed to allow 
 
 The goal of the application to provide a end to end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
 
-Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for diaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authories to communicate with the user to better enforce disaster preparedness.
+Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for disaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authorities to communicate with the user to better enforce disaster preparedness.
 
 In the event of a flood, the app will switch into emergency mode. This mode can be activated by either the user or the local authorities. While in this mode, the app displays a simple evacuation route to the nearest shelter that still has capacity.
 
 After the flood, the app will provide post-flood best practices to help victims rebuild their homes.  The app will also enable a community marketplace, providing a platform for residents to trade resources and help push the economy to recover.
 
-By combining IBM's Data & AI offerings with HERE Technologies' location services, a developer can quickly get started building such a solution. The starter kit offers a React Native template that has integration with Watson Assistant and HERE Technolgies' location services prebuilt, helping developers jumpstart the development process.
+By combining IBM's Data & AI offerings with HERE Technologies' location services, a developer can quickly get started building such a solution. The starter kit offers a React Native template that has integration with Watson Assistant and HERE Technologies' location services prebuilt, helping developers jumpstart the development process.
 
 ## Diagrams
 
-![Challenge 3 Architecture](/images/Challenge_3_Architecture.png)
+![Disaster resiliency architecture diagram](/images/architecture-diagram.png)
+
 
 This solution starter idea combines machine learning and location services with real-time information to get users the information they need to take action quickly.
 
@@ -84,6 +85,7 @@ This solution starter idea combines machine learning and location services with 
 - [Malawi Disaster & Risk Profile](https://www.preventionweb.net/countries/mwi/data/)
 - [Disparities in Cellphone Ownership Pose Challenges in Africa](https://news.gallup.com/poll/189269/disparities-cellphone-ownership-pose-challenges-africa.aspx)
 - [Data.gov disaster datasets](https://catalog.data.gov/dataset?q=disaster)
+- [HERE Geocoding and Search](https://developer.here.com/products/geocoding-and-search)
 
 
 ## Technology
@@ -98,14 +100,18 @@ This solution starter idea combines machine learning and location services with 
 - [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
 - [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
+- [HERE Maps](https://developer.here.com/products/maps)
+- [HERE Routing](https://developer.here.com/products/routing)
 
 ## Getting started
+
+Follow the steps below to get this starter kit up and running. The starter kit, composed of a React Native frontend and Node.js backend, integrates with Watson Assistant and HERE Location Services. It provides developers with a template to quickly get started building a solution.
 
 ### Prerequisite
 
 - Register for an [IBM Cloud](https://cloud.ibm.com/login) account
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview)
-- Register for a [HERE](https://developer.here.com/sign-up) account
+- Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account
 - Install [Node.js](https://nodejs.org/en/)
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020)
@@ -119,6 +125,8 @@ This solution starter idea combines machine learning and location services with 
 
 ### 1. Set up an instance of Watson Assistant
 
+Watson Assistant powers a chat bot which answers questions around preparing, dealing with, and recovering from the dangers of flooding.
+
 Log into the IBM Cloud and provision a Watson Assistant instance.
 
 1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
@@ -129,7 +137,9 @@ Log into the IBM Cloud and provision a Watson Assistant instance.
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
-The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the HERE Developer Portal to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+The application uses the HERE Location Services for maps, searching, and routing.
+
+To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 3. Run the server
 
@@ -139,35 +149,43 @@ To setup and launch the server application:
 1. Copy the `.env.example` file and create a file called `.env`
 1. Edit the `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID`, and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
 1. Edit the value of **name** in `manifest.yml` to your desired application name (e.g., _my-app-name_)
-1. From a terminal run  
+1. From a terminal
     1. Change to the `starter-kit/server-app` directory of the cloned repo
     1. Install the dependencies: `npm install`
-1. Launch the server application locally or deploy to IBM Cloud:
-    - To run locally:
-        1. Start the application: `npm start`
-        1. The server can be accessed at http://localhost:3000
-    - To deploy to IBM Cloud:
-        1. Log in to your IBM Cloud account: `ibmcloud login`
-        1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
-        1. Push the app to IBM Cloud: `ibmcloud app push`
-        1. The server can be accessed at your app name URL: https://my-app-name
+    1. Launch the server application locally or deploy to IBM Cloud:
+        - To run locally:
+            1. Start the application: `npm start`
+            1. The server can be accessed at http://localhost:3000
+        - To deploy to IBM Cloud:
+            1. Log in to IBM Cloud account: `ibmcloud login`
+            1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
+            1. Push the app to IBM Cloud: `ibmcloud app push`
+            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` (e.g.,  https://my-app-name.bluemix.net)
 
 ### 4. Run the mobile application
 
-To configure and launch the mobile application:
+To run the mobile application (using the Xcode iOS Simulator):
 
-1. Edit the `here-credentials.js` and update the API Key for HERE.
-1. From a terminal run
-    1. Change to the `SolutionStarterKitDisastersApp` directory
-    1. Install dependencies: `npm install @react-navigation/native`
-    1. Launch the app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
+1. Go into the `starter-kit/mobile-app` directory of the cloned repo
+1. Copy the `.env.example` file and create a file called `.env`
+1. Edit the `.env` file
+    - Update the `STARTER_KIT_SERVER_URL`, with the URL to the server app launched in the previous step
+    - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal
+1. From a terminal
+    1. Change to the `starter-kit/mobile-app` directory
+    1. Install dependencies: `npm install`
+    1. Go into the `ios` directory: `cd ios`
+    1. Install pod dependencies: `pod install`
+    1. Return to the `mobile-app` directory: `cd ../`
+    1. Launch the app in the simulator: `npm run ios`
+
 
 ## Resources
 
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started)
 - [HERE Location Services](https://developer.here.com/documentation)
-- [React Navigation](https://reactnavigation.org/)
+- [React Native](https://reactnative.dev/)
 
 ## License
 
