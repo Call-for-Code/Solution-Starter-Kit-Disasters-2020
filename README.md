@@ -49,13 +49,13 @@ In order to leverage the benefits of such a system it must be designed to allow 
 
 The goal of the application to provide a end to end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
 
-Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for diaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authories to communicate with the user to better enforce disaster preparedness.
+Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for disaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authorities to communicate with the user to better enforce disaster preparedness.
 
 In the event of a flood, the app will switch into emergency mode. This mode can be activated by either the user or the local authorities. While in this mode, the app displays a simple evacuation route to the nearest shelter that still has capacity.
 
 After the flood, the app will provide post-flood best practices to help victims rebuild their homes.  The app will also enable a community marketplace, providing a platform for residents to trade resources and help push the economy to recover.
 
-By combining IBM's Data & AI offerings with HERE Technologies' location services, a developer can quickly get started building such a solution. The starter kit offers a React Native template that has integration with Watson Assistant and HERE Technolgies' location services prebuilt, helping developers jumpstart the development process.
+By combining IBM's Data & AI offerings with HERE Technologies' location services, a developer can quickly get started building such a solution. The starter kit offers a React Native template that has integration with Watson Assistant and HERE Technologies' location services prebuilt, helping developers jumpstart the development process.
 
 ## Diagrams
 
@@ -104,6 +104,8 @@ This solution starter idea combines machine learning and location services with 
 
 ## Getting started
 
+Follow the steps below to get this starter kit up and running. The starter kit, composed of a React Native frontend and Node.js backend, integrates with Watson Assistant and HERE Location Services. It provides developers with a template to quickly get started building a solution.
+
 ### Prerequisite
 
 - Register for an [IBM Cloud](https://cloud.ibm.com/login) account
@@ -122,6 +124,8 @@ This solution starter idea combines machine learning and location services with 
 
 ### 1. Set up an instance of Watson Assistant
 
+Watson Assistant powers a chat bot which answers questions around preparing, dealing with, and recovering from the dangers of flooding.
+
 Log into the IBM Cloud and provision a Watson Assistant instance.
 
 1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
@@ -132,7 +136,9 @@ Log into the IBM Cloud and provision a Watson Assistant instance.
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
-The application makes use of the HERE Location Services for maps, searching, and routing. To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+The application uses the HERE Location Services for maps, searching, and routing.
+
+To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 3. Run the server
 
