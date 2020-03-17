@@ -59,7 +59,8 @@ By combining IBM's Data & AI offerings with HERE Technologies' location services
 
 ## Diagrams
 
-![Challenge 3 Architecture](/images/Challenge_3_Architecture.png)
+![Disaster resiliency architecture diagram](/images/architecture-diagram.png)
+
 
 This solution starter idea combines machine learning and location services with real-time information to get users the information they need to take action quickly.
 
