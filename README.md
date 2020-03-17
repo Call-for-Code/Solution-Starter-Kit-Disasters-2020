@@ -142,7 +142,7 @@ To setup and launch the server application:
 1. Copy the `.env.example` file and create a file called `.env`
 1. Edit the `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID`, and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
 1. Edit the value of **name** in `manifest.yml` to your desired application name (e.g., _my-app-name_)
-1. From a terminal run  
+1. From a terminal
     1. Change to the `starter-kit/server-app` directory of the cloned repo
     1. Install the dependencies: `npm install`
     1. Launch the server application locally or deploy to IBM Cloud:
@@ -150,27 +150,27 @@ To setup and launch the server application:
             1. Start the application: `npm start`
             1. The server can be accessed at http://localhost:3000
         - To deploy to IBM Cloud:
-            1. Log in to your IBM Cloud account: `ibmcloud login`
+            1. Log in to IBM Cloud account: `ibmcloud login`
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
             1. Push the app to IBM Cloud: `ibmcloud app push`
-            1. The server can be accessed at your app name URL: https://my-app-name
+            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` (e.g.,  https://my-app-name.bluemix.net)
 
 ### 4. Run the mobile application
 
-To configure and launch the mobile application:
+To run the mobile application (using the Xcode iOS Simulator):
 
 1. Go into the `starter-kit/mobile-app` directory of the cloned repo
 1. Copy the `.env.example` file and create a file called `.env`
 1. Edit the `.env` file
     - Update the `STARTER_KIT_SERVER_URL`, with the URL to the server app launched in the previous step
     - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal
-1. From a terminal run
+1. From a terminal
     1. Change to the `starter-kit/mobile-app` directory
     1. Install dependencies: `npm install`
     1. Go into the `ios` directory: `cd ios`
     1. Install pod dependencies: `pod install`
     1. Return to the `mobile-app` directory: `cd ../`
-    1. Launch the mobile app in an OS/Platform specific simulator. For example, for the iPhone (which requires Mac OS X & Xcode): `npm run ios`
+    1. Launch the app in the simulator: `npm run ios`
 
 
 ## Resources
