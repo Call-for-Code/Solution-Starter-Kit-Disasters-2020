@@ -41,13 +41,11 @@ Technology can help our society better prepare for and respond to natural disast
 
 ## The idea
 
-The team tackled the challenges that come in the process of rebuilding after the impact of a disaster. Research has shown that rapid yet well-informed and well-orchestrated rebuilding measures can help to massively reduce the negative impact of disasters on the life, well-being, and health of individuals. An effective and efficient system of accessing information and contributing feedback in a way that can improve the foundation of future decisions is key to this cycle.
-
-In order to leverage the benefits of such a system it must be designed to allow for simple ingestion of information, data, images along with a user-friendly way of drawing insights from it. The team created a platform-based solution that aggregates and analyzes historical and current data related to infrastructure, agriculture, weather, utility and more. It can then be used to derive key insights for future response and reconstruction plans. 
+Due to climate change, floods are becoming more frequent and more severe, leading to specific issues for affected communities. This solution starter kit aims to reduce mortality rates by helping potential victims better prepare for, act during, and recover from a flood. Using a mobile application that helps users share knowledge of best practices and facilitates communities organizing themselves, communities will be able to reduce mortality rates and mitigate economic damage so they can recover faster after a flood.
 
 ## How it works
 
-The goal of the application to provide a end to end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
+The goal of the application is to provide an end-to-end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
 
 Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for disaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authorities to communicate with the user to better enforce disaster preparedness.
 
