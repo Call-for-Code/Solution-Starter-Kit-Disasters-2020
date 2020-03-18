@@ -106,7 +106,7 @@ This solution starter idea combines machine learning and location services with 
 
 ## Getting started
 
-Follow the steps below to get this starter kit up and running. The starter kit, composed of a React Native frontend and Node.js backend, integrates with Watson Assistant and HERE Location Services. It provides developers with a template to quickly get started building a solution.
+Follow the steps below to get this starter kit up and running. The starter kit is composed of a React Native frontend and a Node.js backend. The application includes a chat bot powered by Watson Assistant answering questions about flood emergencies and integrates map & location services provided by HERE Technologies.
 
 ### Prerequisite
 
@@ -126,15 +126,15 @@ Follow the steps below to get this starter kit up and running. The starter kit, 
 
 ### 1. Set up an instance of Watson Assistant
 
-Watson Assistant powers a chat bot which answers questions around preparing, dealing with, and recovering from the dangers of flooding.
-
 Log into the IBM Cloud and provision a Watson Assistant instance.
 
-1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
-1. Launch the service and [create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add)
+1. Provision an instance of **Watson Assistant** from the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
+1. Launch the Watson Assistant service
+1. [Create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add)
 1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json)
-1. Go into the Dialog Skill's settings and select **API Details**
+1. Click on the dialog skill's action menu and select **View API Details**
 1. Take note of the **Assistant ID** and **Api Key**
+1. Go to **Preview Link** to get a link to test/verify the dialog skill
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
@@ -148,10 +148,10 @@ To setup and launch the server application:
 
 1. Go into the `starter-kit/server-app` directory of the cloned repo
 1. Copy the `.env.example` file in `starter-kit/server-app` and create a new file named `.env`
-1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
+1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values taken from the dialog skill's API Detail page in Watson Assistant
 1. Edit the value of **name** in the `manifest.yml` to your desired application name (e.g., _my-app-name_)
 1. From a terminal
-    1. Change to the `starter-kit/server-app` directory of the cloned repo
+    1. Go into the `starter-kit/server-app` directory of the cloned repo
     1. Install the dependencies: `npm install`
     1. Launch the server application locally or deploy to IBM Cloud:
         - To run locally:
@@ -172,8 +172,8 @@ To run the mobile application (using the Xcode iOS Simulator):
 1. Edit the newly created `.env` file
     - Update the `STARTER_KIT_SERVER_URL`, with the URL to the server app launched in the previous step
     - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal
-1. From a terminal
-    1. Change to the `starter-kit/mobile-app` directory
+1. From a terminal:
+    1. Go in to the `starter-kit/mobile-app` directory
     1. Install dependencies: `npm install`
     1. Go into the `ios` directory: `cd ios`
     1. Install pod dependencies: `pod install`
