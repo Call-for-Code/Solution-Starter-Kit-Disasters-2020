@@ -45,7 +45,7 @@ Due to climate change, floods are becoming more frequent and more severe, leadin
 
 ## How it works
 
-The goal of the application is to provide an end-to-end solution to help potential victims combat floods. The team approached the problem by breaking the problem into three phases: before the flood, during the flood, and after the flood.
+The goal of the application is to provide an end-to-end solution to help potential victims combat floods. The team approached the problem by breaking it down into three phases: before the flood, during the flood, and after the flood.
 
 Before the flood, the user is presented a checklist of best practices on how to prepare for the upcoming flood. The checklist is derived from the Sendak Framework for disaster preparedness, along with recommendations from seasoned search and rescue professionals. The application will also enable the local authorities to communicate with the user to better enforce disaster preparedness.
 
