@@ -33,7 +33,7 @@ Read the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/im
 
 ### How can technology help?
 
-Whether it's third-party open source projects or IBM Cloud services, technologies like data analytics, Internet of Things, artificial intelligence, and blockchain can help address global environmental challenges such as water quantity and quality. Using water more efficiently will reduce greenhouse gases from treatment systems. 
+Technology can help our society better prepare for and respond to natural disasters. Specific use cases include reducing exposure to hazards, lessening vulnerability of people and property, wise management of land and the environment, and improving preparedness and early warning for adverse weather events that are gaining in frequency through climate change.
 
 ## Video
 
