@@ -90,6 +90,7 @@ This solution starter idea combines machine learning and location services with 
 
 ## Technology
 
+**IBM Cloud Services**
 - [Generate insights from multiple data sources](https://developer.ibm.com/patterns/generate-insights-from-multiple-data-sources-using-watson-studio/)
 - [Transform and load big data CSV files into a database](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/)
 - [2018 Finalist PD3R](https://developer.ibm.com/blogs/call-for-code-finalist-pd3r-uses-artificial-intelligence-for-retrofitting/)
@@ -99,9 +100,11 @@ This solution starter idea combines machine learning and location services with 
 - [Build and deploy a disaster donations website with end-to-end encryption](https://developer.ibm.com/technologies/systems/patterns/systems-create-a-secure-disaster-donations-website)
 - [Build a chatbot for your mobile app](https://developer.ibm.com/patterns/building-a-chatbot-with-kubernetes-watson-assistant-and-elastic-search/)
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
-- [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
+
+**HERE Location Services**
 - [HERE Maps](https://developer.here.com/products/maps)
 - [HERE Routing](https://developer.here.com/products/routing)
+- [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
 
 ## Getting started
 
@@ -132,23 +135,23 @@ Log into the IBM Cloud and provision a Watson Assistant instance.
 1. Provision an instance of **Watson Assistant** in the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant)
 1. Launch the service and [create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add)
 1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json)
-1. Go into the assistant's settings and select **API Details**
+1. Go into the Dialog Skill's settings and select **API Details**
 1. Take note of the **Assistant ID** and **Api Key**
 
 ### 2. Generate an API Key from the HERE Developer Portal
 
 The application uses the HERE Location Services for maps, searching, and routing.
 
-To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate an API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
+To access these services an API Key is required. Follow the instructions outlined in the [HERE Developer Portal](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) to [generate a JavaScript API Key](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html).
 
 ### 3. Run the server
 
 To setup and launch the server application:
 
 1. Go into the `starter-kit/server-app` directory of the cloned repo
-1. Copy the `.env.example` file and create a file called `.env`
-1. Edit the `.env` file and update the `ASSISTANT_URL`, `ASSISTANT_ID`, and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
-1. Edit the value of **name** in `manifest.yml` to your desired application name (e.g., _my-app-name_)
+1. Copy the `.env.example` file in `starter-kit/server-app` and create a new file named `.env`
+1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` for the Watson Assistant
+1. Edit the value of **name** in the `manifest.yml` to your desired application name (e.g., _my-app-name_)
 1. From a terminal
     1. Change to the `starter-kit/server-app` directory of the cloned repo
     1. Install the dependencies: `npm install`
@@ -157,7 +160,7 @@ To setup and launch the server application:
             1. Start the application: `npm start`
             1. The server can be accessed at http://localhost:3000
         - To deploy to IBM Cloud:
-            1. Log in to IBM Cloud account: `ibmcloud login`
+            1. Log in to IBM Cloud account using the IBM Cloud CLI: `ibmcloud login`
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`
             1. Push the app to IBM Cloud: `ibmcloud app push`
             1. The server can be accessed at a URL using the **name** given in the `manifest.yml` (e.g.,  https://my-app-name.bluemix.net)
@@ -167,8 +170,8 @@ To setup and launch the server application:
 To run the mobile application (using the Xcode iOS Simulator):
 
 1. Go into the `starter-kit/mobile-app` directory of the cloned repo
-1. Copy the `.env.example` file and create a file called `.env`
-1. Edit the `.env` file
+1. Copy the `.env.example` file in `starter-kit/mobile-app` and create a file named `.env`
+1. Edit the newly created `.env` file
     - Update the `STARTER_KIT_SERVER_URL`, with the URL to the server app launched in the previous step
     - Update the `HERE_APIKEY` with the API Key generated in the HERE Developer Portal
 1. From a terminal
