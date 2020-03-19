@@ -134,7 +134,10 @@ Log in to IBM Cloud and provision a Watson Assistant instance.
 1. Launch the Watson Assistant service.
 1. [Create an **Assistant**](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add).
 1. [Add a dialog skill](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) to the **Assistant** by importing the [`starter-kit-flood-dialog-skill.json`](./starter-kit/assistant/starter-kit-flood-dialog-skill.json) file.
-1. Click the dialog skill's action menu, and select **View API Details**.
+1. View the API details using either approach:
+    - Click the dialog skill's action menu ( **`⋮`** ), and select **View API Details**.
+    - Click the assistant's action menu ( **`⋮`** ), click **Settings**, and select **API Details**.
+
 1. Note the **Assistant ID** and **Api Key**.
 1. Go to **Preview Link** to get a link to test and verify the dialog skill.
 
