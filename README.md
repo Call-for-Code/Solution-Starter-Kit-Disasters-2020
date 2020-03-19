@@ -112,8 +112,11 @@ Use the following steps to get this starter kit up and running. The starter kit 
 - Register for an [IBM Cloud](https://cloud.ibm.com/login) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
-- Install [Node.js](https://nodejs.org/en/).
-- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html).
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
+    - [Node.js](https://nodejs.org/en/)
+    - [Watchman](https://facebook.github.io/watchman/docs/install.html)
+    - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+    - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Disasters-2020).
 
 ### Steps
