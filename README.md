@@ -37,7 +37,7 @@ Technology can help our society better prepare for and respond to natural disast
 
 ## Video
 
-[![Call for Code Solution Starter: Water sustainability in the context of climate change ](https://img.youtube.com/vi/hC2b-iP6Rxc/0.jpg)](https://youtu.be/3wsfFKRcT-g)
+[![Call for Code Solution Starter: Water sustainability in the context of climate change ](./images/video-thumbnail.png)](https://youtu.be/3wsfFKRcT-g)
 
 ## The idea
 
@@ -109,7 +109,7 @@ Use the following steps to get this starter kit up and running. The starter kit 
 
 ### Prerequisite
 
-- Register for an [IBM Cloud](https://cloud.ibm.com/login) account.
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 - Register for a [HERE](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic) account.
 - Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html) (for iOS).
