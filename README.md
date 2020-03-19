@@ -121,10 +121,10 @@ Use the following steps to get this starter kit up and running. The starter kit 
 
 ### Steps
 
-1. [Set up an instance of Watson Assistant](#1.-set-up-an-instance-of-watson-assistant).
-1. [Generate an API Key from the HERE Developer Portal](#2.-generate-an-api-key-from-the-here-developer-portal).
-1. [Run the server](#3.-run-the-server).
-1. [Run the mobile application](#4.-run-the-mobile-application).
+1. [Set up an instance of Watson Assistant](#1-set-up-an-instance-of-watson-assistant).
+1. [Generate an API Key from the HERE Developer Portal](#2-generate-an-api-key-from-the-here-developer-portal).
+1. [Run the server](#3-run-the-server).
+1. [Run the mobile application](#4-run-the-mobile-application).
 
 ### 1. Set up an instance of Watson Assistant
 
