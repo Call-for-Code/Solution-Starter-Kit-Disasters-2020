@@ -150,7 +150,7 @@ To set up and launch the server application:
 
 1. Go to the `starter-kit/server-app` directory of the cloned repo.
 1. Copy the `.env.example` file in the `starter-kit/server-app` directory, and create a new file named `.env`.
-1. Edit the newly created `.env` file and update the `ASSISTANT_ID` and `ASSISTANT_IAM_APIKEY` with the values from the dialog skill's API Detail page in Watson Assistant.
+1. Edit the newly created `.env` file and update the `ASSISTANT_ID`, `ASSISTANT_IAM_APIKEY`, and `ASSISTANT_URL` with the values from the dialog skill's API Detail page in Watson Assistant.
 1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
 1. From a terminal:
     1. Go to the `starter-kit/server-app` directory of the cloned repo.
