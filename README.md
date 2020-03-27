@@ -99,6 +99,7 @@ This solution starter idea combines machine learning and location services with 
 - [Rapid development of a scalable mobile application](https://developer.ibm.com/videos/demo-of-ibm-developer-mobile-app/)
 
 **HERE Location Services**
+- [HERE.com API Key](https://developer.here.com/ref/IBM_starterkit_Disasters2020?create=Freemium-Basic)
 - [HERE Maps](https://developer.here.com/products/maps)
 - [HERE Routing](https://developer.here.com/products/routing)
 - [Integrate interactive maps and location features into your application](https://developer.here.com/documentation/)
