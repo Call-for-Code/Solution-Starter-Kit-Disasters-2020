@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ScrollView, View, Text, TextInput, Button } from 'react-native';
 import Config from 'react-native-config';
 
 const styles = StyleSheet.create({
@@ -31,21 +31,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#D0E2FF',
     padding: 10,
     alignSelf: 'flex-start',
-    maxWidth: '80%'
+    maxWidth: '85%'
   },
   myText: {
     fontFamily: 'IBMPlexSans-Medium',
     backgroundColor: '#F1F0EE',
     padding: 10,
     alignSelf: 'flex-end',
-    maxWidth: '75%'
+    maxWidth: '80%'
   },
   inputContainer: {
     backgroundColor: '#F1F0EE',
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16
+    padding: 14
   },
   textInput: {
     fontFamily: 'IBMPlexSans-Medium',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 24,
     bottom: 47
-  },
+  }
 });
 
 const serverUrl = Config.STARTER_KIT_SERVER_URL;
@@ -150,7 +150,6 @@ const Chat = function ({ navigation }) {
   };
 
   const addMessages = (messages, fromInput) => {
-    const date = (new Date()).getTime();
     const result = messages.map((r, i) => {
       return {
         text: r.text,
