@@ -1,8 +1,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 
-import { View, Button, Image, StyleSheet } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,57 +10,59 @@ import Home from './src/screens/home';
 import Chat from './src/screens/chat';
 import Map from './src/screens/map';
 
-import { HomeIcon, MapIcon } from './src/images/svg-icons';
+import { HomeIcon, ChatIcon, MapIcon } from './src/images/svg-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const MainStackOptions = ({ navigation }) => {
-  return ({
-    headerRight: () => (
-      <Button
-        onPress={() => navigation.navigate('Chat')}
-        title='Chat'
-      />
-    )
-  });
-};
-
 const tabBarOptions = {
-  showLabel: false,
+  // showLabel: false,
   activeTintColor: '#1062FE',
   inactiveTintColor: '#000',
   style: {
     backgroundColor: '#F1F0EE',
-    paddingTop: 10
+    paddingTop: 5
   }
 };
 
 const TabLayout = () => (
   <Tab.Navigator
+    style={{paddingTop: 50}}
     initialRouteName='Home'
     tabBarOptions={tabBarOptions} >
     <Tab.Screen
       name='Home'
       component={Home}
       options={{
-        tabBarIcon: ({color}) => (<HomeIcon stroke={color}/>)
+        tabBarIcon: ({color}) => (<HomeIcon fill={color}/>)
+      }}
+    />
+    <Tab.Screen
+      name='Chat'
+      component={ChatStackLayout}
+      options={{
+        tabBarIcon: ({color}) => (<ChatIcon fill={color} />)
       }}
     />
     <Tab.Screen
       name='Map'
-      component={Map}
+      component={MapStackLayout}
       options={{
-        tabBarIcon: ({color}) => (<MapIcon stroke={color} />)
+        tabBarIcon: ({color}) => (<MapIcon fill={color} />)
       }}
     />
   </Tab.Navigator>
 );
 
-const StackLayout = () => (
+const ChatStackLayout = () => (
   <Stack.Navigator>
-    <Stack.Screen name='Starter Kit' component={TabLayout} options={MainStackOptions} />
-    <Stack.Screen name='Chat' component={Chat} />
+    <Stack.Screen name='Ask a Question' component={Chat} />
+  </Stack.Navigator>
+);
+
+const MapStackLayout = () => (
+  <Stack.Navigator>
+    <Stack.Screen name='Locate Assistance' component={Map} />
   </Stack.Navigator>
 );
 
@@ -73,7 +73,7 @@ const App = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   if (isLoading) {
@@ -81,7 +81,7 @@ const App = () => {
   } else {
     return (
       <NavigationContainer>
-        <StackLayout/>
+        <TabLayout/>
       </NavigationContainer>
     );
   }
