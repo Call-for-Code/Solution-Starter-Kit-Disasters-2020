@@ -33,6 +33,7 @@ const message = (text, sessionId) => {
   return new Promise((resolve, reject) => {
     assistant.message(payload, (err, data) => {
       if (err) {
+        console.error('Failed to send message to Watson Assistant');
         reject(err);
       } else {
         resolve(data.result.output);
@@ -46,9 +47,16 @@ const session = () => {
     return Promise.reject('ASSISTANT_ID has not been configured');
   }
 
-  return assistant.createSession({
-    assistantId: assistantId
-  }).then(response => response.result['session_id']);
+  return assistant
+    .createSession({
+      assistantId: assistantId
+    })
+    .then(response => response.result['session_id'])
+    .catch(err => {
+      console.error('Failed to obtain a session ID from Watson Assistant');
+      console.error(`  ASSISTANT_URL: ${apiUrl}`);
+      throw err;
+    });
 };
 
 module.exports = {
