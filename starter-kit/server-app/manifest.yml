@@ -1,5 +1,6 @@
 applications:
 - name: solution-starter-kit-disasters-2020-server
+  random-route: true
   command: npm start
   path: .
   memory: 256M

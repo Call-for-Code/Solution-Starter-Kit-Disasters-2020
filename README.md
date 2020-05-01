@@ -169,7 +169,7 @@ To set up and launch the server application:
             1. Log in to your IBM Cloud account using the IBM Cloud CLI: `ibmcloud login`.
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
             1. Push the app to IBM Cloud: `ibmcloud app push`.
-            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  https://my-app-name.bluemix.net).
+            1. The server can be accessed at the URL shown in the console after the app successful uploads and starts (for example,  https://solution-starter-kit-disasters-2020-server-random-route.bluemix.net).
 
 ### 4. Run the mobile application
 
