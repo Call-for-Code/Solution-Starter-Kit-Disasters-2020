@@ -194,7 +194,7 @@ To run the mobile application (using the Xcode iOS Simulator or Android Studio E
             > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device
     1. **Android only**: Open Android Studio and setup the project with the android folder. 
     1. **Android only**: Open Android Virtual Device Manager and launch the virtual device installed.
-    1. **Android only**: Click on Debug.
+    1. **Android only**: Click on Debug in Android Studio.
             
 
 ## Resources
