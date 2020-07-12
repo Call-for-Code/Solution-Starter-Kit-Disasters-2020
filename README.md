@@ -190,8 +190,12 @@ To run the mobile application (using the Xcode iOS Simulator or Android Studio E
     1. Launch the app in the simulator/emulator:
         - **iOS only**: `npm run ios`
             > **Note**: You should be running at least iOS 13.0. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
-        - **Android only**: `npm run android`
-            > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device.
+        - **Android only**: `react-native run-android`
+            > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device
+    1. **Android only**: Open Android Studio and setup the project with the android folder. 
+    1. **Android only**: Open Android Virtual Device Manager and launch the virtual device installed.
+    1. **Android only**: Click on Debug.
+            
 
 ## Resources
 
